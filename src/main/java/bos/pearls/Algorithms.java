@@ -15,7 +15,7 @@ public class Algorithms {
         String[] classNames = getAlgoClassNames().split(",");
         List<IAlgorithm> algorithms = new ArrayList<IAlgorithm>();
         for (String name : classNames) {
-            String fullName = algoFullClassName(name.trim());
+            String fullName = algoClassFullName(name.trim());
             algorithms.add(instantiate(fullName));
         }
 
@@ -50,7 +50,7 @@ public class Algorithms {
         return algo;
     }
 
-    private static String algoFullClassName(String name) {
+    private static String algoClassFullName(String name) {
         final String algoPackage = "bos.pearls.algorithms";
         return algoPackage + "." + name;
     }
