@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import static bos.pearls.util.Utils.checkNotNull;
+
 public class Algorithms {
     private Algorithms() {}
 
@@ -31,7 +33,8 @@ public class Algorithms {
             throw new RuntimeException(e.getMessage());
         }
 
-        return prop.getProperty("algorithms");
+        String classNames = prop.getProperty("algorithms");
+        return checkNotNull(classNames);
     }
 
     private static IAlgorithm instantiate(String className) {
