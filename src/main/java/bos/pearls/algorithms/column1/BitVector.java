@@ -39,4 +39,5 @@ public final class BitVector {
     public boolean isSet(int index) {
         return (bits[byteIndex(index)] & (MASK >> index)) != 0;
     }
+
 }
