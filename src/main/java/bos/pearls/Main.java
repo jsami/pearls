@@ -5,11 +5,9 @@ import org.perf4j.StopWatch;
 
 import java.util.List;
 
-import static bos.pearls.Algorithms.*;
-
 public class Main {
     public static void main(String[] args) {
-        List<IAlgorithm> algos = getAlgorithms();
+        List<IAlgorithm> algos = Algorithms.get();
         for(IAlgorithm algo : algos) {
             run(algo);
         }

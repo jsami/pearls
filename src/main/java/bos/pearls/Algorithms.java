@@ -9,7 +9,7 @@ import java.util.Properties;
 public class Algorithms {
     private Algorithms() {}
 
-    public static List<IAlgorithm> getAlgorithms() {
+    public static List<IAlgorithm> get() {
         String[] classNames = getAlgoClassNames().split(",");
         List<IAlgorithm> algorithms = new ArrayList<IAlgorithm>();
         for (String name : classNames) {
