@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         List<IAlgorithm> algos = Algorithms.get();
         for(IAlgorithm algo : algos) {
+            algo.setup();
             run(algo);
         }
     }
