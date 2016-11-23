@@ -11,6 +11,7 @@ public class Main {
         for(IAlgorithm algo : algos) {
             algo.setup();
             run(algo);
+            algo.cleanup();
         }
     }
 
