@@ -16,4 +16,6 @@ public class SystemSorting implements IAlgorithm {
     public void run() {
         Arrays.sort(input);
     }
+
+    public void cleanup() {}
 }
