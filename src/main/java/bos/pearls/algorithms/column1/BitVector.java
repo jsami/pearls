@@ -28,6 +28,10 @@ public final class BitVector {
         return bitIndex >> 3;
     }
 
+    private int indexInByte(int index) {
+        return index & 7;
+    }
+
     public void clear() {
         for(int i = 0; i < numberOfBytes; i++) {
             bits[i] &= 0;
@@ -36,17 +40,17 @@ public final class BitVector {
 
     public void set(int index) {
         validateIndex(index);
-        bits[byteIndex(index)] |= (MASK >> index);
+        bits[byteIndex(index)] |= (MASK >> indexInByte(index));
     }
 
     public void unset(int index) {
         validateIndex(index);
-        bits[byteIndex(index)] &= ~(MASK >> index);
+        bits[byteIndex(index)] &= ~(MASK >> indexInByte(index));
     }
 
     public boolean isSet(int index) {
         validateIndex(index);
-        return (bits[byteIndex(index)] & (MASK >> index)) != 0;
+        return (bits[byteIndex(index)] & (MASK >> indexInByte(index))) != 0;
     }
 
     private void validateIndex(int index) {
